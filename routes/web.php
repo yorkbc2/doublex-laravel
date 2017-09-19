@@ -5,8 +5,29 @@
 */
 
 Route::get('/', function () {
-    return redirect("/news");
+	App::setLocale("ua");
+
+    return view("landing.index");
 });
+
+Route::get("/{lang}", function ($lang) {
+	switch($lang) {
+		case "ru" :
+			App::setLocale("ru");
+			break;
+		case "ua" :
+			App::setLocale("ua");
+			break;
+		case "en" :
+			App::setLocale("en");
+			break;
+		default :
+			App::setLocale("ua");
+			break;
+	}
+
+	return view("landing.index");
+})->where("lang", ".*");
 
 Route::get("/news", "PageController@render_news");
 

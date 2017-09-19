@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title>
 		@isset($title)
-			{{$title}} :: Бердичів.com.ua - Сайт для всіх: від молоді до старих
+			{{$title}}
 		@else
-			Бердичів.com.ua - Сайт для всіх: від молоді до старих
+			{{__("titles.index")}}
 		@endisset
 		</title>
 	<link rel="stylesheet" href="/css/app.css">
